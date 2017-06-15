@@ -12,5 +12,8 @@
 <P>  The time on the server is ${serverTime}. </P>
 
 <h2>git test</h2>
+<ul>
+	<li>choa</li>
+</ul>
 </body>
 </html>
