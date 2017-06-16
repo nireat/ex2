@@ -5,6 +5,8 @@
 	<title>Home</title>
 </head>
 <body>
+<a href="notice/noticeList">noticeList</a>
+
 <h1>
 	Hello world!  
 </h1>
@@ -16,7 +18,8 @@
 	<li>choa</li>
 	<li>BugFix_1</li>
 	<li>BugFix_2</li>
-
+	
 </ul>
+
 </body>
 </html>

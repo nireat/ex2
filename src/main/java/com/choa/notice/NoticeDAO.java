@@ -10,16 +10,21 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.choa.util.DBConnect;
 import com.choa.util.RowMaker;
 
+
+
 @Repository
+//^ 이것이 아이디가 됨 -> 서비스의 @Qualifier 에 동일하게 입력해야함
 //NoticeDAO noticeDAO = new NoticeDAO();
 public class NoticeDAO {
 	
-	@Inject
+	@Autowired
 	private DataSource dataSource;
 	
 /*	public void setDataSource(DataSource dataSource) {

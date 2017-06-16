@@ -7,6 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.xml.ws.RequestWrapper;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,6 +27,12 @@ public class NoticeController {
 	@Inject //type으로 찾아라
 	private NoticeService noticeService;
 	
+	@RequestMapping(value="test")
+	public void test(){
+		System.out.println(noticeService);
+		noticeService.test();
+	}
+	
 	//list
 	@RequestMapping(value="noticeList", method=RequestMethod.GET)
 	public void noticeList(Model model, @RequestParam(defaultValue="1") Integer curPage) throws Exception{
@@ -42,8 +49,8 @@ public class NoticeController {
 	
 	//writeForm
 	@RequestMapping(value="noticeWrite", method=RequestMethod.GET)
-	public void noticeWrite(){
-		
+	public void noticeWrite(Model model){
+		model.addAttribute("path", "Write");
 	}
 	
 	//write
@@ -65,9 +72,11 @@ public class NoticeController {
 	
 	//updateform
 	@RequestMapping(value="noticeUpdate", method=RequestMethod.GET)
-	public void noticeUpdate(Integer num, Model model) throws Exception{
+	public String noticeUpdate(Integer num, Model model) throws Exception{
 		NoticeDTO noticeDTO = noticeService.noticeView(num);
 		model.addAttribute("dto", noticeDTO);
+		model.addAttribute("path", "Update");
+		return "notice/noticeWrite";
 	}
 	
 	//update

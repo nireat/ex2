@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.choa.util.MakePage;
@@ -14,19 +16,23 @@ import com.choa.util.RowMaker;
 //NoticeService noticeService = new NoticeService();
 public class NoticeService {
 	
-	@Inject //type으로 찾아라
+	@Inject
 	private NoticeDAO noticeDAO;
+	
+	public void test(){
+		System.out.println(noticeDAO);
+	}
 	
 	//1.생성자 이용방식(Constructor)
 	public NoticeService(NoticeDAO noticeDAO){
 		this.noticeDAO = noticeDAO;
 	}
 	
-/*	//2.setter
+	//2.setter
 	public void setNoticeDAO(NoticeDAO noticeDAO) {
 		this.noticeDAO = noticeDAO;
 	}
-	*/
+	
 	//view
 	public NoticeDTO noticeView(int num) throws Exception{
 		//NoticeDAO noticeDAO = new NoticeDAO();

@@ -4,5 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<!-- data source 객체 만들기 -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<!-- db연결할 때 쓰는 id -->
+		<property name="username" value="user03" />
+		<property name="password" value="user03" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.20.18:1521:xe" />
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	</bean>
+	
 </beans>
