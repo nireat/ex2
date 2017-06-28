@@ -11,7 +11,7 @@
 
 <form action="notice${path}" method="post">
 		<input type="hidden" name="num" value="${dto.num}">
-		<p>writer:<input type="text" name="writer" value="${dto.writer}" readonly="readonly"></p>
+		<p>writer:<input type="text" name="writer" value="${dto.writer}"></p>
 		<p>title:<input type="text" name="title" value="${dto.title }"></p>
 	<p><textarea rows="25" cols="40" name="contents" value="${dto.contents}"></textarea></p>
 	<input type="submit" name="WRITE">
